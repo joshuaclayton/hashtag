@@ -5,6 +5,15 @@ Feature: Search twitter by hashtag
 
   @javascript
   Scenario: User searches for a hashtag
-    When I go to the homepage
-    And search for the hashtag "rails"
+    When I search for the hashtag "rails"
     Then I should see tweets with the hashtag "#rails"
+
+  @javascript
+  Scenario: User views metadata for each tweet
+    Given Twitter returns the following tweets for the search term "#rails":
+      | text                         |
+      | I love #rails                |
+      | Thoughtbot is awesome #rails |
+      | nyc > boston #rails          |
+    When I search for the hashtag "rails"
+    Then I should see 3 tweets

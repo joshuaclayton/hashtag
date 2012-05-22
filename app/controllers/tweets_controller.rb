@@ -4,6 +4,6 @@ class TweetsController < ApplicationController
 
   def show
     search_term = "##{params[:id]}"
-    @tweets = Twitter.search(search_term)
+    @tweets = Searcher.new(search_term).search
   end
 end
