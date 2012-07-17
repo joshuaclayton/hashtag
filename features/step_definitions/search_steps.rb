@@ -19,6 +19,8 @@ Given /^Twitter returns the following tweets when searching for "(.*?)":$/ do |h
 end
 
 Then /^I should see the tweet "(.*?)" authored by "(.*?)"$/ do |tweet_text, tweet_from_user|
+  wait_until(10) { first('[data-role="search-results"]') }
+
   within '[data-role="search-results"]' do
     page.should have_css("li:contains('#{tweet_text}')")
     page.should have_css("li:contains('#{tweet_from_user}')")
