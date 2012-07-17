@@ -12,6 +12,12 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.order = "random"
     config.mock_with :mocha
+
+    config.around do |example|
+      old_search_implementation = Searcher.search_implementation
+      example.run
+      Searcher.search_implementation = old_search_implementation
+    end
   end
 end
 
