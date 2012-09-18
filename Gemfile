@@ -16,8 +16,9 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'mocha', require: 'mocha_standalone'
+  gem 'mocha', '0.9.8', require: 'mocha_standalone'
   gem 'guard-spork'
+  gem 'bourne'
 end
 
 # Gems used only for assets and not required
