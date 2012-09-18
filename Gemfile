@@ -10,11 +10,13 @@ gem 'high_voltage'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
 
 group :test do
   gem 'capybara'
   gem 'mocha', require: 'mocha_standalone'
+  gem 'guard-spork'
 end
 
 # Gems used only for assets and not required
