@@ -7,6 +7,7 @@ gem 'rails', '~> 3.2'
 
 gem 'sqlite3'
 gem 'high_voltage'
+gem 'twitter', '~> 3.7'
 
 group :test, :development do
   gem 'rspec-rails'

@@ -1,0 +1,8 @@
+<h1><%= @search_term %></h1>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li class='tweet'>
+      <%= tweet.text %>
+    </li>
+  <% end %>
+</ul>

@@ -6,10 +6,6 @@ feature 'View the homepage' do
     page_should_be_titled 'Hashtag'
   end
 
-  def visit_homepage
-    visit root_path
-  end
-
   def page_should_be_titled(text)
     page.should have_css('title', text: text)
   end
