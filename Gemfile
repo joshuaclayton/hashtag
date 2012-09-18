@@ -6,9 +6,15 @@ gem 'rails', '~> 3.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'high_voltage'
 
 group :test, :development do
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'mocha', require: 'mocha_standalone'
 end
 
 # Gems used only for assets and not required
