@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'twitter', '~> 3.7.0'
 
 
 group :development, :test do
@@ -14,6 +15,7 @@ end
 
 group :test do
   gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 # Gems used only for assets and not required
 # in production environments by default.
