@@ -14,9 +14,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'bourne'
+  gem 'guard-spork'
 end
 # Gems used only for assets and not required
 # in production environments by default.
