@@ -7,6 +7,6 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @tweets = Search.new("##{params[:id]})")
+    @tweets = Search.new("##{params[:id]}")
   end
 end
