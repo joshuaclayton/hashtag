@@ -8,6 +8,12 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @tweets = Twitter.search("##{params[:id]}").results
+    @tweets = Twitter.search(search_term).results
+  end
+
+  private
+
+  def search_term
+    "##{params[:id]}"
   end
 end
