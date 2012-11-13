@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'twitter', '~> 3.8.0'
 
 group :development, :test do
   gem 'rspec-rails'
