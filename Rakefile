@@ -5,3 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 Hashtag::Application.load_tasks
+
+require 'guard/jasmine/task'
+Guard::JasmineTask.new
+
+task default: ['spec', 'guard:jasmine']

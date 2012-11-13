@@ -11,6 +11,8 @@ gem 'twitter', '~> 3.8.0'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'guard-jasmine'
+  gem 'jasminerice'
 end
 
 group :test do
