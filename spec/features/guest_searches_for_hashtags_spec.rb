@@ -7,7 +7,7 @@ feature 'Guest searches for hashtags' do
     click_on 'Submit'
 
     expect(current_path).to eq '/searches/rails'
-    expect(page).to have_css 'li', text: /rails/i, count: 15
+    expect(page).to have_css 'li', text: /#rails/i, count: 15
   end
 
   scenario 'with a hashtag' do
@@ -16,6 +16,6 @@ feature 'Guest searches for hashtags' do
     click_on 'Submit'
 
     expect(current_path).to eq '/searches/rails'
-    expect(page).to have_css 'li', text: /rails/i, count: 15
+    expect(page).to have_css 'li', text: /#rails/i, count: 15
   end
 end
