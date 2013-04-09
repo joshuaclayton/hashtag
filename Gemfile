@@ -6,7 +6,11 @@ gem 'rails', '~> 3.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'twitter'
 
+group :development, :test do
+  gem 'dotenv-rails'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
