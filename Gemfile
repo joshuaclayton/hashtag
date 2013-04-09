@@ -12,6 +12,13 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '2.13.0'
+end
+
+group :test do
+  gem 'capybara', '2.0.3'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
