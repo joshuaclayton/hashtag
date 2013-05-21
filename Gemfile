@@ -11,6 +11,7 @@ gem 'twitter'
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
+  gem 'bourne'
   gem 'capybara', '~> 2.1.0'
 end
 

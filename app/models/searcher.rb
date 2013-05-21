@@ -7,6 +7,16 @@ class Searcher
   end
 
   def each(&block)
-    backend.search(@term).results.each(&block)
+    tweets.each(&block)
+  end
+
+  def length
+    tweets.length
+  end
+
+  private
+
+  def tweets
+    @tweets ||= backend.search(@term).results
   end
 end
