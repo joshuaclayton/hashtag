@@ -9,19 +9,16 @@ feature 'Guest searches for a hashtag' do
   end
 
   scenario 'displays known information' do
-    Searcher.backend = FakeTwitter
-
-    FakeTwitter['#rails'] = 5.times.map do
-      { text: 'I love #rails' }
-    end
-
+    search_fake_twitter '#rails', 5.times.map { { text: 'I love #rails', from_user: 'ImTheAuthor' } }
     search_for '#rails'
 
     expect(current_path).to eq '/searches/rails'
     expect(page).to have_css 'li', text: 'I love #rails', count: 5
+    expect(page).to have_css '.author', text: 'ImTheAuthor', count: 5
   end
 
   scenario 'searches without a hashtag' do
+    search_fake_twitter '#rails', 15.times.map { { text: 'I love #rails' } }
     search_for 'rails'
 
     expect(current_path).to eq '/searches/rails'
@@ -29,6 +26,7 @@ feature 'Guest searches for a hashtag' do
   end
 
   scenario 'updates search results' do
+    search_fake_twitter '#ruby', 15.times.map { { text: 'I love #ruby' } }
     search_for '#rails'
 
     fill_in 'Search', with: '#ruby'
@@ -36,6 +34,12 @@ feature 'Guest searches for a hashtag' do
 
     expect(current_path).to eq '/searches/ruby'
     expect(page).to have_css 'li', text: /#ruby/i, count: 15
+  end
+
+  def search_fake_twitter(term, results)
+    Searcher.backend = FakeTwitter
+
+    FakeTwitter[term] = results
   end
 
   def search_for(term)

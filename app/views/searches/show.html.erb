@@ -6,6 +6,9 @@
 
 <ul>
   <% @tweets.each do |tweet| %>
-    <li><%= tweet.text %></li>
+    <li>
+      <%= tweet.text %>
+      <span class='author'><%= tweet.from_user %></span>
+    </li>
   <% end %>
 </ul>
