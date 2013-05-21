@@ -35,4 +35,14 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.before do
+    FakeTwitter.clear
+  end
+
+  config.around do |example|
+    cached_backend = Searcher.backend
+    example.run
+    Searcher.backend = cached_backend
+  end
 end
