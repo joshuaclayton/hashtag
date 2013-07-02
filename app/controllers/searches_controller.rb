@@ -3,10 +3,17 @@ class SearchesController < ApplicationController
   end
 
   def create
-    redirect_to search_path(params[:search][:search_term].gsub(/#/, ''))
+    redirect_to search_path(search_term_without_hash)
   end
 
   def show
-    @statuses = Twitter.search("##{params[:id]}").results
+    search_term = "##{params[:id]}"
+    @statuses = Twitter.search(search_term).results
+  end
+
+  private
+
+  def search_term_without_hash
+    params[:search][:search_term].gsub(/#/, '')
   end
 end
