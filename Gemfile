@@ -7,6 +7,8 @@ gem 'twitter'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 gem 'sass-rails'
