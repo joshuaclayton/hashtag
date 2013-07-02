@@ -27,6 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
+    bourne (1.1.2)
+      mocha (= 0.10.5)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -58,9 +60,12 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.23)
     mini_portile (0.5.0)
     minitest (4.7.5)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     nokogiri (1.6.0)
@@ -132,6 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourne
   capybara
   coffee-rails
   dotenv-rails

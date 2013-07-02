@@ -9,6 +9,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'bourne'
 end
 
 gem 'sass-rails'
