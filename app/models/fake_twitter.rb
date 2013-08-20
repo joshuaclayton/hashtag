@@ -5,15 +5,15 @@ class FakeTwitter
     @tweets = Hash.new([])
   end
 
-  def self.[]=(term, tweet_texts)
+  def self.[]=(term, tweet_data)
     @tweets ||= {}
-    @tweets[term] = tweet_texts
+    @tweets[term] = tweet_data
   end
 
   def self.search(term)
     @tweets ||= {}
-    tweets = @tweets[term].map do |tweet_text|
-      Twitter::Status.new(text: tweet_text, id: 1234)
+    tweets = @tweets[term].map do |tweet_datum|
+      Twitter::Status.new(tweet_datum.merge(id: 1234))
     end
 
     OpenStruct.new(results: tweets)

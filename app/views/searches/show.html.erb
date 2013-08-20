@@ -4,7 +4,7 @@
   <% @results.each do |result| %>
     <li>
       <%= result.text %>
-      <span data-role="author"></span>
+      <span data-role="author"><%= result.from_user %></span>
     </li>
   <% end %>
 </ul>

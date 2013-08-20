@@ -31,12 +31,13 @@ feature 'Guest searches hashtags' do
 
   scenario 'allows for searching specific terms and results' do
     Searcher.backend = FakeTwitter
-    FakeTwitter['#ruby'] = ['I <3 #ruby!!!']
+    FakeTwitter['#ruby'] = [{ text: 'I <3 #ruby!!!', from_user: 'awesomePerson' }]
 
     visit root_path
     search_for '#ruby'
 
     expect(page).to have_css '.results li', text: 'I <3 #ruby!!!'
+    expect(page).to have_css '.results li *[data-role="author"]', text: 'awesomePerson'
   end
 
   scenario 'handles no results being returned' do
