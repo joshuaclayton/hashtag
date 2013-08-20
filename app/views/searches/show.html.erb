@@ -1,0 +1,7 @@
+<%= render 'form', search_term: @search_term %>
+
+<ul class="results">
+  <% @results.each do |result| %>
+    <li><%= result.text %></li>
+  <% end %>
+</ul>
