@@ -2,6 +2,9 @@
 
 <ul class="results">
   <% @results.each do |result| %>
-    <li><%= result.text %></li>
+    <li>
+      <%= result.text %>
+      <span data-role="author"></span>
+    </li>
   <% end %>
 </ul>
